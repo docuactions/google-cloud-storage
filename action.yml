@@ -1,0 +1,9 @@
+name: "Deploy Docusaurus to Google Cloud Storage"
+description: "Builds and syncs Docusaurus v2 site to Google Cloud Storage"
+author: docuactions
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: green
