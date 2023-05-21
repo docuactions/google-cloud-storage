@@ -8,7 +8,7 @@ RUN apk update && \
     git \
     openssl \
     openssh-client \
-    python2 \
+    python3 \
     py-pip \
     build-base \
     autoconf \
