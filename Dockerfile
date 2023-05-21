@@ -21,7 +21,7 @@ RUN apk update && \
 
 RUN pip install --no-cache-dir gcloud
 
-RUN npm install -g yarn
+RUN npm install -g yarn --force
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

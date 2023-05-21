@@ -15,7 +15,7 @@ fi
 echo "$GCS_SERVICE_KEY" > /tmp/gcs-service-key.json
 
 echo "Install yarn"
-npm install -g yarn
+npm install -g yarn --force
 
 echo "Install dependencies"
 yarn install
