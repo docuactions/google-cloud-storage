@@ -1,6 +1,6 @@
 FROM node:18.16.0-alpine
 
-LABEL version="1.0.0"
+ENV GCS_VERSION = "159.0.0"
 
 RUN apk update && \
     apk upgrade && \
@@ -19,7 +19,7 @@ RUN apk update && \
     libjpeg-turbo-dev \
     libpng-dev
 
-RUN pip install --no-cache-dir google-cloud-sdk
+RUN pip install --no-cache-dir gcloud
 
 RUN npm install -g yarn
 
