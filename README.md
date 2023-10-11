@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: docuactions/google-cloud-storage@master
+      - uses: docuactions/google-cloud-storage@main
         env:
           GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
           GCS_SERVICE_KEY: ${{ secrets.GCS_SERVICE_KEY }}
