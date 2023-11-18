@@ -1,5 +1,17 @@
 #!/bin/sh
 
+
+RUN apk update && \
+  apk upgrade && \
+  apk add --no-cache \
+  bash \
+  curl
+
+RUN pip install --no-cache-dir gcloud && \
+  curl -sSL https://sdk.cloud.google.com | bash
+
+ENV PATH $PATH:/root/google-cloud-sdk/bin
+
 set -e
 
 if [ -z "$GCS_BUCKET" ]; then
