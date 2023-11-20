@@ -1,17 +1,5 @@
 #!/bin/sh
 
-
-RUN apk update && \
-  apk upgrade && \
-  apk add --no-cache \
-  bash \
-  curl
-
-RUN pip install --no-cache-dir gcloud && \
-  curl -sSL https://sdk.cloud.google.com | bash
-
-ENV PATH $PATH:/root/google-cloud-sdk/bin
-
 set -e
 
 if [ -z "$GCS_BUCKET" ]; then
@@ -25,6 +13,9 @@ if [ -z "$GCS_SERVICE_KEY" ]; then
 fi
 
 echo "$GCS_SERVICE_KEY" > /tmp/gcs-service-key.json
+
+echo "===================== GOOGLE CLOUD VERSION ====================="
+gcloud version
 
 echo "Install yarn"
 npm install -g yarn --force
